@@ -30,9 +30,9 @@ namespace Practica4.ViewModels
         }
 
         private async void OnAddContact()
-        {
-            //await App.Current.MainPage.DisplayPromptAsync("add character", "Type the name ", "ok");
-            await App.Current.MainPage.Navigation.PushAsync(new AddContactPage());
+        { 
+        //    //await App.Current.MainPage.DisplayPromptAsync("add character", "Type the name ", "ok");
+        await App.Current.MainPage.Navigation.PushAsync(new SignUpContactPage());
         }
 
     }

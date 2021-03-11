@@ -2,8 +2,8 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="Practica4.Views.AddContactPage"
-    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    x:Class="Practica4.Views.SignUpContactPage"
+      xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     ios:Page.UseSafeArea="true">
     <ContentPage.Content>
         <ScrollView>
@@ -12,8 +12,8 @@
                    Grid.Row="0"/>
             <Entry Placeholder="Number" Style="{StaticResource Key=EntryStyle}" VerticalOptions="Center" HorizontalOptions="FillAndExpand"
                    Grid.Row="1" />
-             <Button Text="Add Contact" Style="{StaticResource Key=buttonStyle}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Grid.Row="2"/>
-
+             <Button Text="Add Contact" Style="{StaticResource Key=buttonStyle}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Grid.Row="2"
+                     Command="{Binding AddContactCommand}"/>
            </Grid>
         </ScrollView>
     </ContentPage.Content>
