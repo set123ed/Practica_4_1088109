@@ -9,6 +9,9 @@ namespace Practica4.Models
 {
     public class Contact
     {
+        public Contact()
+        {
+        }
 
         public Contact(string name, string telephone)
         {
@@ -18,7 +21,16 @@ namespace Practica4.Models
 
         public string Name { get; set; }
         public string Telephone { get; set;}
-        
+
+        internal static void add(object p)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal static void Add(Contact contact)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
     

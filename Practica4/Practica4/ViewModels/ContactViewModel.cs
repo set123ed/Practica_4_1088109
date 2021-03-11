@@ -17,15 +17,9 @@ namespace Practica4.ViewModels
         public ContactViewModel()
         {
 
-            //Addcontact = new Command(async () =>
-            //{
-            //    await App.Current.MainPage.Navigation.PushAsync(new ContactPage(), false);
-            //});
+            
 
             Addcontact = new Command(OnAddContact);
-
-            //Contacts = new List<Contact>
-            //{ new Contact ( "Eduardo", "8093334444")};
 
         }
 

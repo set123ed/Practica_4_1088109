@@ -6,15 +6,16 @@
       xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     ios:Page.UseSafeArea="true">
     <ContentPage.Content>
-        <ScrollView>
-           <Grid RowDefinitions="auto,auto,auto" ColumnDefinitions="*" Margin="0,20,0,20">
-            <Entry Placeholder="Name and Last" Style="{StaticResource Key=EntryStyle}" VerticalOptions="Center" HorizontalOptions="FillAndExpand"
-                   Grid.Row="0"/>
-            <Entry Placeholder="Number" Style="{StaticResource Key=EntryStyle}" VerticalOptions="Center" HorizontalOptions="FillAndExpand"
-                   Grid.Row="1" />
-             <Button Text="Add Contact" Style="{StaticResource Key=buttonStyle}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Grid.Row="2"
-                     Command="{Binding AddContactCommand}"/>
+         <ScrollView>
+           <Grid RowDefinitions="auto,auto,auto" ColumnDefinitions="*">
+               <Entry Placeholder="Name" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="FillAndExpand"
+                      Style="{StaticResource Key=entryStyle}"  />
+            <Entry Placeholder="Number"  VerticalOptions="Center" HorizontalOptions="FillAndExpand"
+                   Grid.Row="1"  Style="{StaticResource Key=entryStyle}"/>
+             <Button Text="Add Contact"  VerticalOptions="Center" HorizontalOptions="FillAndExpand" Grid.Row="2"
+                     Command="{Binding AddContactCommand}" Style="{x:StaticResource buttonStyle}" />
            </Grid>
         </ScrollView>
+       
     </ContentPage.Content>
 </ContentPage>
