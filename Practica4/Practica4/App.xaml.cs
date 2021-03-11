@@ -11,7 +11,7 @@ namespace Practica4
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage( new ContactPage());
+            MainPage = new NavigationPage( new RegisterPage());
         }
 
         protected override void OnStart()

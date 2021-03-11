@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Practica4.Views.RegisterPage"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="true">
+    <ScrollView>
+        <Grid RowDefinitions="*,*" ColumnDefinitions="*">
+            <Entry Text="{Binding Name}" Grid.Row="0" Grid.ColumnSpan="0" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
+            <Entry Text="{Binding Telephone}" Grid.Row="1" Grid.ColumnSpan="0" VerticalOptions="Start" HorizontalOptions="FillAndExpand"/>
+        </Grid>
+
+    </ScrollView>
+</ContentPage>

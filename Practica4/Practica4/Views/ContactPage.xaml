@@ -5,8 +5,11 @@
     x:Class="Practica4.Views.ContactPage"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     ios:Page.UseSafeArea="true">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Order="Primary" Command="{Binding AddCommand}" />
+    </ContentPage.ToolbarItems>
     <ListView ItemsSource="{Binding Contacts}">
-       <ListView.ItemTemplate>
+       <ListView.ItemTemplate >
            <DataTemplate>
                <TextCell Text="{Binding Name}" Detail= "{Binding Telephone}"/>
            </DataTemplate>
