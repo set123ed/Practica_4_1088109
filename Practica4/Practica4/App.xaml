@@ -16,7 +16,6 @@
             <Setter  Property="FontAttributes" Value="Italic"/>
                 <Setter Property="TextColor" Value="Green"/>
         </Style>
-           
             </ResourceDictionary>
     </Application.Resources>
 </Application>
