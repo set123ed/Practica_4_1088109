@@ -5,8 +5,11 @@
     x:Class="Practica4.Views.ContactPage"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     ios:Page.UseSafeArea="true">
-    <ContentPage.Content>
-       
-        
-    </ContentPage.Content>
+    <ListView ItemsSource="{Binding Contacts}">
+       <ListView.ItemTemplate>
+           <DataTemplate>
+               <TextCell Text="{Binding Name)" Detail="{Binding Telephone}"/>
+           </DataTemplate>
+       </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>
