@@ -17,15 +17,16 @@ namespace Practica4.ViewModels
         public ContactViewModel()
         {
 
-            Addcontact = new Command(AddCommand);
+            Addcontact = new Command(OnAddContact);
 
-            // Contacts = new List<Contact>
-            //{ new Contact ( "Eduardo", "8093334444")};
+            Contacts = new List<Contact>
+            { new Contact ( "Eduardo", "8093334444")};
 
         }
 
-        private async void AddCommand()
+        private async void OnAddContact()
         {
+            //await App.Current.MainPage.DisplayPromptAsync("add character", "Type the name ","ok");
             await App.Current.MainPage.Navigation.PushAsync(new RegisterPage());
         }
 

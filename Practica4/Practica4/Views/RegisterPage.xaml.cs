@@ -11,7 +11,7 @@ namespace Practica4.Views
         public RegisterPage()
         {
             InitializeComponent();
-            BindingContext = new ContactViewModel();
+            BindingContext = new RegisterViewModel();
         }
     }
 }
