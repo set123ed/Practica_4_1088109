@@ -12,22 +12,22 @@ namespace Practica4.ViewModels
     {
         public IList<Contact> Contacts { get; }
 
-        public ICommand AddCommand { get; }
+        public ICommand Addcontact { get; }
  
         public ContactViewModel()
         {
 
-         //   AddCommand = new Command(AddContact);
+            Addcontact = new Command(AddCommand);
 
-           // Contacts = new List<Contact>
+            // Contacts = new List<Contact>
             //{ new Contact ( "Eduardo", "8093334444")};
 
         }
 
-      //  private async void AddContact
-       // {
-         //   await Application.Current.MainPage.Navigation.PushAsync(new RegisterPage());
-       // }
+        private async void AddCommand()
+        {
+            await App.Current.MainPage.Navigation.PushAsync(new RegisterPage());
+        }
 
     }
 }

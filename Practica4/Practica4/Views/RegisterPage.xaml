@@ -6,9 +6,10 @@
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     ios:Page.UseSafeArea="true">
     <ScrollView>
-        <Grid RowDefinitions="*,*" ColumnDefinitions="*">
-            <Entry Text="{Binding Name}" Grid.Row="0" Grid.ColumnSpan="0" VerticalOptions="End" HorizontalOptions="FillAndExpand"/>
-            <Entry Text="{Binding Telephone}" Grid.Row="1" Grid.ColumnSpan="0" VerticalOptions="Start" HorizontalOptions="FillAndExpand"/>
+        <Grid RowDefinitions="*,*,*" ColumnDefinitions="*">
+            <Entry Text="{Binding Name}" Grid.Row="0" Grid.ColumnSpan="0" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+            <Entry Text="{Binding Telephone}" Grid.Row="1" Grid.ColumnSpan="0" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+            <Button Text="{Binding Add}" Grid.Row="2" Grid.ColumnSpan="0" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
         </Grid>
 
     </ScrollView>
