@@ -11,8 +11,8 @@ namespace Practica4.ViewModels
 
         public ContactViewModel()
         {
-            Contacts = new List<Contact>
-            { new Contact ( "Eduardo", "8093334444")};
+           // Contacts = new List<Contact>
+            //{ new Contact ( "Eduardo", "8093334444")};
 
         }
     }

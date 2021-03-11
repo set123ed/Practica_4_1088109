@@ -8,7 +8,7 @@
     <ListView ItemsSource="{Binding Contacts}">
        <ListView.ItemTemplate>
            <DataTemplate>
-               <TextCell Text="{Binding Name)" Detail="{Binding Telephone}"/>
+               <TextCell Text="{Binding Name}" Detail= "{Binding Telephone}"/>
            </DataTemplate>
        </ListView.ItemTemplate>
     </ListView>
