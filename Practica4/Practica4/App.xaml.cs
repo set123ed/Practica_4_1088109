@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Practica4.Views;
 
 namespace Practica4
 {
@@ -10,7 +11,7 @@ namespace Practica4
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage( new ContactPage());
         }
 
         protected override void OnStart()
