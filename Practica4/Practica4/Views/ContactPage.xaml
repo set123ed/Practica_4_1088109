@@ -6,7 +6,7 @@
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     ios:Page.UseSafeArea="true">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Order="Default" Command="{Binding AddContact}" />
+        <ToolbarItem Text="Add" Order="Primary" Command="{Binding Addcontact}" />
     </ContentPage.ToolbarItems>
     <ListView ItemsSource="{Binding Contacts}">
        <ListView.ItemTemplate >

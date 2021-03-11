@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Practica4.Views.AddContactPage"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="true">
+    <ContentPage.Content>
+        <ScrollView>
+           <Grid RowDefinitions="auto,auto,auto" ColumnDefinitions="*" Margin="0,20,0,20">
+            <Entry Placeholder="Name and Last" Style="{StaticResource Key=EntryStyle}" VerticalOptions="Center" HorizontalOptions="FillAndExpand"
+                   Grid.Row="0"/>
+            <Entry Placeholder="Number" Style="{StaticResource Key=EntryStyle}" VerticalOptions="Center" HorizontalOptions="FillAndExpand"
+                   Grid.Row="1" />
+             <Button Text="Add Contact" Style="{StaticResource Key=buttonStyle}" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Grid.Row="2"/>
+
+           </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
