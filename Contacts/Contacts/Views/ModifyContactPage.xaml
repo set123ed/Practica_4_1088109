@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Contacts.Views.ModifyContactPage"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="true">
+<ContentPage.Content>
+        <StackLayout Orientation="Vertical" Margin="40">
+            <StackLayout>
+                <Entry Text="{Binding editContact.Name, Mode=TwoWay}" Style="{StaticResource Key=labelStyle1}"/>
+                <Entry Text="{Binding editContact.Number, Mode=TwoWay}" Style="{StaticResource Key=labelStyle1}"/>
+            </StackLayout>
+            <StackLayout>
+                <Button Text="Edit" Command="{Binding EditContactCommand}" Style="{StaticResource Key=buttonStyle1}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

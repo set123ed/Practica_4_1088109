@@ -10,21 +10,82 @@ namespace Practica_4.ViewModel
 {
     public class AddContactViewModel : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-        public ICommand AddCommand { get; set; }
-        public Contact nContact { get; set; } = new Contact();
 
-        public AddContactViewModel(ObservableCollection<Contact> contactAgendar)
+        public Contact newContact { get; set; } = new Contact();
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public ICommand AddCommand { get; set; }
+
+        public AddContactViewModel(ObservableCollection<Contact> contactsList)
         {
             AddCommand = new Command(async () =>
             {
-                contactAgendar.Add(nContact);
-                await App.Current.MainPage.DisplayAlert("Good", $"Contact {nContact.Name} added", "Ok");
-                await App.Current.MainPage.Navigation.PopAsync();
+
+                if (!contactsList.Contains(newContact))
+                {
+                    contactsList.Add(newContact);
+                    await App.Current.MainPage.DisplayAlert("Success!", "Contact has been added", "OK");
+                }
+                else
+                {
+                    await App.Current.MainPage.DisplayAlert("Alert", "Contact already exists!", "OK");
+                }
+
+
             });
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //public event PropertyChangedEventHandler PropertyChanged;
+    //public ICommand AddCommand { get; set; }
+    //public Contact nContact { get; set; } = new Contact();
+
+    //public AddContactViewModel(ObservableCollection<Contact> contactAgendar)
+    //{
+    //    AddCommand = new Command(async() =>
+    //    {
+    //        //contactAgendar.Add(nContact);
+    //        //await App.Current.MainPage.DisplayAlert("Good","Contact added", "Ok");
+    //        //await App.Current.MainPage.Navigation.PopAsync();
+
+    //        if (!contactAgendar.Contains(nContact))
+    //        {
+    //            contactAgendar.Add(nContact);
+    //            await App.Current.MainPage.DisplayAlert("Success!", "Contact has been added", "OK");
+    //        }
+    //        else
+    //        {
+    //            await App.Current.MainPage.DisplayAlert("Alert", "Contact already exists!", "OK");
+    //        }
+
+    //    });
+    //}
+//}
+//}
         //private async void OnAddContact()
         //{
 

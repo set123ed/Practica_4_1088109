@@ -6,8 +6,8 @@
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="true">
     <Grid RowDefinitions="auto,auto,auto">
-        <Entry Text="{Binding Contact.Name}" Placeholder="Name" Grid.Row="0" VerticalOptions="FillAndExpand"/>
-        <Entry Text="{Binding Contact.Number}" Placeholder="Number" Grid.Row="1" VerticalOptions="FillAndExpand"/>
+        <Entry Text="{Binding nContact.Name}" Placeholder="Name" Grid.Row="0" VerticalOptions="FillAndExpand"/>
+        <Entry Text="{Binding nContact.Number}" Placeholder="Number" Grid.Row="1" VerticalOptions="FillAndExpand"/>
         <Button Text="Add Contact" TextColor=" red" Grid.Row="2" Command="{Binding AddCommand}"/>
     </Grid>
 </ContentPage>

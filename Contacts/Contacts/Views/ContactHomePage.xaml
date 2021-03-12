@@ -2,14 +2,18 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="Practica_4.Views.ContacsPage"
-    
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Name="contactsPage"
+    x:Class="Contacts.Views.ContactHomePage"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-             ios:Page.UseSafeArea="true">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Order="Primary" Command="{Binding AddCommand}" />
+    ios:Page.UseSafeArea="true">
+        <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddContactCommand}"/>
     </ContentPage.ToolbarItems>
-   <ListView ItemsSource="{Binding Contacts}" HasUnevenRows="True">
+
+    <ListView ItemsSource="{Binding Contacts}" HasUnevenRows="True">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <!--<TextCell Text="{Binding Name}" Detail="{Binding Number}" />-->

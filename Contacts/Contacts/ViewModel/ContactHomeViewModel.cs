@@ -1,45 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Input;
-using Practica_4.models;
-using Xamarin.Forms;
-using Practica_4.Views;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Windows.Input;
 using Xamarin.Essentials;
+using Xamarin.Forms;
+using Contacts.Views;
+using Contacts.ViewModel;
+using Contacts.Models;
+using System;
 
-
-namespace Practica_4.ViewModel
+namespace Contacts.ViewModel
 {
-    public class ContactViewModel : INotifyPropertyChanged
+    public class ContactHomeViewModel : INotifyPropertyChanged
     {
-
-
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public ObservableCollection<models.Contact> Contacts { get; set; } = new ObservableCollection<models.Contact>();
+        public ObservableCollection<Models.Contact> Contacts { get; set; } = new ObservableCollection<Models.Contact>();
 
         public ICommand DeleteContactCommand { get; set; }
-        public ICommand AddCommand { get; set; }
+        public ICommand AddContactCommand { get; set; }
         public ICommand MoreOptionsCommand { get; set; }
 
-
-        public ContactViewModel()
+        public ContactHomeViewModel()
         {
-            AddCommand = new Command(async () =>
+            AddContactCommand = new Command(async () =>
             {
-                await App.Current.MainPage.Navigation.PushAsync(new AddContactPage(Contacts), false);
+                await App.Current.MainPage.Navigation.PushAsync(new AddContactPage(Contacts));
             });
-            DeleteContactCommand = new Command<models.Contact>((param) =>
+            DeleteContactCommand = new Command<Models.Contact>((param) =>
             {
                 Contacts.Remove(param);
             });
-            MoreOptionsCommand = new Command<models.Contact>((param) =>
+            MoreOptionsCommand = new Command<Models.Contact>((param) =>
             {
                 MoreOptions(param);
             });
         }
-        async void MoreOptions(models.Contact selectedContact)
+        async void MoreOptions(Models.Contact selectedContact)
         {
             var selectedAction = await App.Current.MainPage.DisplayActionSheet(null, "Cancel", null, "Call", "Edit");
 
@@ -82,40 +78,3 @@ namespace Practica_4.ViewModel
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            //public event PropertyChangedEventHandler PropertyChanged;
-            //public  ObservableCollection<models.Contact> Contacts { get; set; } = new ObservableCollection<models.Contact>();
-            //public ICommand AddCommand { get; set; }
-            ////public ICommand DeleteContactCommand { get; set; }
-            ////public ICommand MoreOptionsCommand { get; set; }
-
-
-            //public ContactViewModel()
-            //{
-            //    AddCommand = new Command(async () =>
-            //    {
-            //        await App.Current.MainPage.Navigation.PushAsync(new AddContactPage(Contacts));
-            //    });
-
-            //}
-        
-
-
-
-
