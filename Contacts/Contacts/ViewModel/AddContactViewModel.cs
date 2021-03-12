@@ -23,6 +23,7 @@ namespace Contacts.ViewModel
             AddCommand = new Command(async () =>
             {
                     contactsList.Add(nContact);
+                await App.Current.MainPage.Navigation.PopAsync();
             });
 
         }
