@@ -20,72 +20,83 @@ namespace Contacts.ViewModel
 
         public ICommand NewContactCommand { get; set; }
 
-        public ICommand MoreOptionsCommand { get; set; }
+        public ICommand OtherCommand { get; set; }
+        public ICommand SelectedCommand { get; set; }
+
+        private Xamarin.Essentials.Contact _selectitem;
+
+        public Xamarin.Essentials.Contact SelectItem
+        {
+            get
+            {
+                return _selectitem;
+            }
+
+            set
+            {
+                _selectitem = value;
+                if (_selectitem != null)
+                {
+                    SelectedCommand?.Execute(_selectitem);
+                }
+            }
+        }
 
         public ContactHomeViewModel()
         {
+            //SelectedCommand = new Command<Models.Contact>(MoreOptions);
+
             NewContactCommand = new Command(OnNewContactCommand);
-            //async () =>
-            //{
-            //    await App.Current.MainPage.Navigation.PushAsync(new AddContactPage(Contacts));
-            //});
+
             DeleteContactCommand = new Command<Models.Contact>((param) =>
             {
                 Contacts.Remove(param);
-            });
-            MoreOptionsCommand = new Command<Models.Contact>((param) =>
+            }); 
+            OtherCommand = new Command<Models.Contact>((param) =>
             {
                 MoreOptions(param);
             });
-        }
 
+        }
         private async void OnNewContactCommand()
         {
             await App.Current.MainPage.Navigation.PushAsync(new AddContactPage(Contacts));
-
         }
 
 
-        async void MoreOptions(Models.Contact selectedContact)
+
+        public async void MoreOptions(Models.Contact selectContact)
         {
-            var selectedAction = await App.Current.MainPage.DisplayActionSheet(null, "Cancel", null, "Call", "Edit");
+            var selectedAction = await App.Current.MainPage.DisplayActionSheet( null,"Cancel",null, "Call", "Edit");
 
-            //if (selectedAction == "Cancel")
-            //{
-
-            //}
-            //else if (selectedAction == "Call")
-            //{
-            //    PhoneDialer.Open(selectedContact.Number);
-            //}
-            //else if (selectedAction == "Edit")
-            //{
-            //    await App.Current.MainPage.Navigation.PushAsync(new EditContactPage(selectedContact), false);
-            //}
-
-
-            switch (selectedAction)
+            if (selectedAction == "Cancel")
             {
-                case "Cancel":
-                    break;
-                case "Call":
-                    try
-                    {
-                        PhoneDialer.Open(selectedContact.Number);
-                    }
-                    catch (ArgumentNullException anEx)
-                    {
-                        await App.Current.MainPage.DisplayAlert("Error", "Number was empty", "Cancel");
-                    }
-                    catch (FeatureNotSupportedException ex)
-                    {
-                        await App.Current.MainPage.DisplayAlert("Error", "Phone Dialer not supported in this phone", "Cancel");
-                    }
-                    break;
-                case "Edit":
-                    await App.Current.MainPage.Navigation.PushAsync(new ModifyContactPage(selectedContact), false);
-                    break;
+                //cancel action
+            }
+            else if (selectedAction == "Call")
+            {
+                try
+                {
+                    PhoneDialer.Open(selectContact.Number);
+                }
+                catch (ArgumentNullException anEx)
+                {
+                    // Number was null or white space
+                    await App.Current.MainPage.DisplayAlert("Null", "Number Empty", "Ok");
+                }
+                catch (FeatureNotSupportedException ex)
+                {
+                    // Phone Dialer is not supported on this device.
+                }
+               
+            }
+            else if (selectedAction == "Edit")
+            {
+                await App.Current.MainPage.Navigation.PushAsync(new ModifyContactPage(selectContact),false);
             }
         }
     }
 }
+
+
+

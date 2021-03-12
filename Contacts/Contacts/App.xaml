@@ -4,17 +4,18 @@
              x:Class="Contacts.App">
     <Application.Resources>
         <ResourceDictionary>
-            <Style TargetType="Label" x:Key="labelStyle1">
-                <Setter Property="HorizontalOptions" Value="Center"/>
-                <Setter Property="Margin" Value="0,20"/>
-                <Setter Property="WidthRequest" Value="200"/>
+            <Style TargetType="Entry" x:Key="entryStyle">
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+               <Setter Property="FontSize" Value="20" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
             </Style>
-            <Style TargetType="Button" x:Key="buttonStyle1">
-                <Setter Property="HorizontalOptions" Value="Center"/>
-                <Setter Property="WidthRequest" Value="200"/>
-                <Setter Property="HeightRequest" Value="40"/>
-                <Setter Property="CornerRadius" Value="50"/>
-                <Setter Property="Margin" Value="0,180"/>
+            <Style TargetType="Button" x:Key="buttonStyle">
+             <Setter Property="VerticalOptions" Value="EndAndExpand" />
+                <Setter Property="BackgroundColor" Value="DarkRed"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontAttributes" Value="Bold"/>
             </Style>
         </ResourceDictionary>
     </Application.Resources>

@@ -12,7 +12,7 @@ namespace Contacts.ViewModel
     public class ModifyContactViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        public Contact editC { get; set; } = new Contact();
+        public Contact editC { get; set; } = new Models.Contact();
         public ICommand EditContactCommand { get; set; }
         public ModifyContactViewModel(Contact contact)
         {
@@ -20,9 +20,7 @@ namespace Contacts.ViewModel
             editC.Number = contact.Number;
             EditContactCommand = new Command(() => EditContact(contact));
         }
-
-
-        private async void EditContact(Contact contact)
+        private async void EditContact(Models.Contact contact)
         {
             contact.Name = editC.Name;
             contact.Number = editC.Number;

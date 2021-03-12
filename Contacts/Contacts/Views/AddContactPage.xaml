@@ -7,13 +7,24 @@
     ios:Page.UseSafeArea="true">
     <ContentPage.Content>
 <StackLayout Orientation="Vertical" Margin="40">
-            <StackLayout>
-                <Entry Text="{Binding nContact.Name}" Placeholder="Name" Style="{StaticResource Key=labelStyle1}"/>
-                <Entry Text="{Binding nContact.Number}" Placeholder="Number" Style="{StaticResource Key=labelStyle1}"/>
-            </StackLayout>
-            <StackLayout>
-                <Button Text="Add" Command="{Binding AddCommand}" Style="{StaticResource Key=buttonStyle1}"/>
-            </StackLayout>
+            <Grid  Margin="10,0,10,0" VerticalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Entry  Placeholder="Name" Style="{StaticResource Key=entryStyle}"
+                         HeightRequest="90" Grid.Row="2" Text="{Binding nContact.Name}"
+                        HorizontalOptions="FillAndExpand" VerticalOptions="Center"  />
+                <Entry  Placeholder="Number" Style="{StaticResource Key=entryStyle}" Text="{Binding nContact.Number}"
+                         HeightRequest="90" HorizontalOptions="FillAndExpand" VerticalOptions="Center"
+                        Grid.Row="3" />
+            <Button Text="Add" Command="{Binding AddCommand}" Style="{StaticResource Key=buttonStyle}" Grid.Row="4"/>
+
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

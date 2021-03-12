@@ -8,11 +8,11 @@
 <ContentPage.Content>
         <StackLayout Orientation="Vertical" Margin="40">
             <StackLayout>
-                <Entry Text="{Binding editContact.Name, Mode=TwoWay}" Style="{StaticResource Key=labelStyle1}"/>
-                <Entry Text="{Binding editContact.Number, Mode=TwoWay}" Style="{StaticResource Key=labelStyle1}"/>
+                <Entry Text="{Binding editC.Name, Mode=TwoWay}" Style="{StaticResource Key=entryStyle}"/>
+                <Entry Text="{Binding editC.Number, Mode=TwoWay}" Style="{StaticResource Key=entryStyle}"/>
             </StackLayout>
             <StackLayout>
-                <Button Text="Edit" Command="{Binding EditContactCommand}" Style="{StaticResource Key=buttonStyle1}"/>
+                <Button Text="Edit" Command="{Binding EditContactCommand}" Style="{StaticResource Key=buttonStyle}"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
