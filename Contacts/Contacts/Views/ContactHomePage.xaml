@@ -10,7 +10,7 @@
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     ios:Page.UseSafeArea="true">
         <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Command="{Binding AddContactCommand}"/>
+        <ToolbarItem Text="Add" Command="{Binding NewContactCommand}"/>
     </ContentPage.ToolbarItems>
 
     <ListView ItemsSource="{Binding Contacts}" HasUnevenRows="True">

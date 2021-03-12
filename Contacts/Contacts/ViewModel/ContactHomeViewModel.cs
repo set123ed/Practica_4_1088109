@@ -17,15 +17,18 @@ namespace Contacts.ViewModel
         public ObservableCollection<Models.Contact> Contacts { get; set; } = new ObservableCollection<Models.Contact>();
 
         public ICommand DeleteContactCommand { get; set; }
-        public ICommand AddContactCommand { get; set; }
+
+        public ICommand NewContactCommand { get; set; }
+
         public ICommand MoreOptionsCommand { get; set; }
 
         public ContactHomeViewModel()
         {
-            AddContactCommand = new Command(async () =>
-            {
-                await App.Current.MainPage.Navigation.PushAsync(new AddContactPage(Contacts));
-            });
+            NewContactCommand = new Command(OnNewContactCommand);
+            //async () =>
+            //{
+            //    await App.Current.MainPage.Navigation.PushAsync(new AddContactPage(Contacts));
+            //});
             DeleteContactCommand = new Command<Models.Contact>((param) =>
             {
                 Contacts.Remove(param);
@@ -35,6 +38,14 @@ namespace Contacts.ViewModel
                 MoreOptions(param);
             });
         }
+
+        private async void OnNewContactCommand()
+        {
+            await App.Current.MainPage.Navigation.PushAsync(new AddContactPage(Contacts));
+
+        }
+
+
         async void MoreOptions(Models.Contact selectedContact)
         {
             var selectedAction = await App.Current.MainPage.DisplayActionSheet(null, "Cancel", null, "Call", "Edit");
