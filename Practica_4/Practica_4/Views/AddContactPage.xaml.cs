@@ -3,10 +3,6 @@ using System.Collections.ObjectModel;
 using Practica_4.models;
 using Practica_4.ViewModel;
 using System.Collections.ObjectModel;
-
-
-
-
 using Xamarin.Forms;
 
 namespace Practica_4.Views
@@ -16,7 +12,7 @@ namespace Practica_4.Views
         public AddContactPage(ObservableCollection<Contact> contactAgendar)
         {
             InitializeComponent();
-            BindingContext = new AddContactViewModel();
+            BindingContext = new AddContactViewModel(contactAgendar);
         }
 
     }

@@ -7,10 +7,12 @@ using Xamarin.Forms;
 
 namespace Practica_4.Views
 {
+
     public partial class ContacsPage : ContentPage
     {
         public ContacsPage()
         {
+
             InitializeComponent();
             BindingContext = new ContactViewModel();
 

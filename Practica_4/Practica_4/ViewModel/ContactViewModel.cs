@@ -15,19 +15,20 @@ namespace Practica_4.ViewModel
         public event PropertyChangedEventHandler PropertyChanged;
         public static ObservableCollection<models.Contact> Contacts { get; set; } = new ObservableCollection<models.Contact>();
         public ICommand AddCommand { get; set; }
-        public ICommand DeleteContactCommand { get; set; }
-        public ICommand MoreOptionsCommand { get; set; }
+        //public ICommand DeleteContactCommand { get; set; }
+        //public ICommand MoreOptionsCommand { get; set; }
 
 
         public ContactViewModel()
         {
-            AddCommand = new Command(() => { OnAddContact(); });
+            AddCommand = new Command(OnAddContact);
 
         }
 
-        public async void OnAddContact() {
+        public async void OnAddContact()
+        {
 
-            await App.Current.MainPage.Navigation.PushAsync(new ContacsPage());
+            await App.Current.MainPage.Navigation.PushAsync(new AddContactPage(Contacts));
         }
     }
 }
