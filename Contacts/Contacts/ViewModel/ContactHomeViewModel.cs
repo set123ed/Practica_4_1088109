@@ -63,8 +63,6 @@ namespace Contacts.ViewModel
             await App.Current.MainPage.Navigation.PushAsync(new AddContactPage(Contacts));
         }
 
-
-
         public async void MoreOptions(Models.Contact selectContact)
         {
             var selectedAction = await App.Current.MainPage.DisplayActionSheet( null,"Cancel",null, "Call", "Edit");
@@ -93,8 +91,10 @@ namespace Contacts.ViewModel
             else if (selectedAction == "Edit")
             {
                 await App.Current.MainPage.Navigation.PushAsync(new ModifyContactPage(selectContact),false);
-            }
-        }
+
+
+    }
+}
     }
 }
 

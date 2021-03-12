@@ -13,8 +13,7 @@
         <ToolbarItem Text="Add" Command="{Binding NewContactCommand}"/>
     </ContentPage.ToolbarItems>
 
-    <ListView ItemsSource="{Binding Contacts}" HasUnevenRows="True" SelectedItem="{Binding SelectedCommand}"
-              x:Name="listContact" IsPullToRefreshEnabled="True" >
+    <ListView ItemsSource="{Binding Contacts}" HasUnevenRows="True">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <!--<TextCell Text="{Binding Name}" Detail="{Binding Number}" />-->
@@ -28,14 +27,12 @@
                                       Command="{Binding Path=BindingContext.OtherCommand, Source={x:Reference contactsPage}}"
                                       CommandParameter="{Binding .}"/>
                     </ViewCell.ContextActions>
-
                     <StackLayout Orientation="Vertical" Margin="30">
-                        <Label Text="{Binding Name}" FontAttributes="Bold"/>
-                        <Label Text="{Binding Number}" />
+                        <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="Default"/>
+                        <Label Text="{Binding Number}"  />
                     </StackLayout>
 
                 </ViewCell>
-
 
             </DataTemplate>
         </ListView.ItemTemplate>

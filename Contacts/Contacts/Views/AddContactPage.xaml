@@ -6,7 +6,6 @@
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     ios:Page.UseSafeArea="true">
     <ContentPage.Content>
-<StackLayout Orientation="Vertical" Margin="40">
             <Grid  Margin="10,0,10,0" VerticalOptions="CenterAndExpand">
                 <Grid.RowDefinitions>
                   <RowDefinition Height="*"/>
@@ -23,8 +22,6 @@
                          HeightRequest="90" HorizontalOptions="FillAndExpand" VerticalOptions="Center"
                         Grid.Row="3" />
             <Button Text="Add" Command="{Binding AddCommand}" Style="{StaticResource Key=buttonStyle}" Grid.Row="4"/>
-
             </Grid>
-        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

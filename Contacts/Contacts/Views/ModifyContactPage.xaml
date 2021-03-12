@@ -6,14 +6,21 @@
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     ios:Page.UseSafeArea="true">
 <ContentPage.Content>
-        <StackLayout Orientation="Vertical" Margin="40">
-            <StackLayout>
-                <Entry Text="{Binding editC.Name, Mode=TwoWay}" Style="{StaticResource Key=entryStyle}"/>
-                <Entry Text="{Binding editC.Number, Mode=TwoWay}" Style="{StaticResource Key=entryStyle}"/>
-            </StackLayout>
-            <StackLayout>
-                <Button Text="Edit" Command="{Binding EditContactCommand}" Style="{StaticResource Key=buttonStyle}"/>
-            </StackLayout>
-        </StackLayout>
+
+    <Grid  Margin="10,0,10,0" VerticalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                 <Entry Text="{Binding eContact.Name }" HeightRequest="90"
+                         HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Row="2" Style="{StaticResource Key=entryStyle}"/>
+                <Entry Text="{Binding eContact.Number}" HeightRequest="90"
+                        HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Row="3" Style="{StaticResource Key=entryStyle}"/>
+                <Button Text="Edit" Command="{Binding ModifyContactCommand}" Style="{StaticResource Key=buttonStyle}"/>
+            </Grid>
     </ContentPage.Content>
 </ContentPage>
