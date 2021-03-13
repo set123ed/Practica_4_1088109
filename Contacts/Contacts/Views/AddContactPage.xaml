@@ -10,18 +10,61 @@
                 <Grid.RowDefinitions>
                   <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="80"/>
-                <RowDefinition Height="80"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+
                 </Grid.RowDefinitions>
-                <Entry  Placeholder="Name" Style="{StaticResource Key=entryStyle}"
-                         HeightRequest="90" Grid.Row="2" Text="{Binding nContact.Name}"
-                        HorizontalOptions="FillAndExpand" VerticalOptions="Center"  />
-                <Entry  Placeholder="Number" Style="{StaticResource Key=entryStyle}" Text="{Binding nContact.Number}"
-                         HeightRequest="90" HorizontalOptions="FillAndExpand" VerticalOptions="Center"
-                        Grid.Row="3" />
-            <Button Text="Add" Command="{Binding AddCommand}" Style="{StaticResource Key=buttonStyle}" Grid.Row="4"/>
+               <Grid.ColumnDefinitions>
+                   <ColumnDefinition Width="auto"/>
+                   <ColumnDefinition Width="*"/>
+               </Grid.ColumnDefinitions>
+                <ImageButton Grid.Row="0" Source="Addimage" HeightRequest="50"
+                             Grid.ColumnSpan="2" VerticalOptions="CenterAndExpand" />
+
+                <Image Grid.Row="1" Source="user.png" Grid.Column="0" HorizontalOptions="Start" />
+                <Image Grid.Row="3" Source="Company.png" Grid.Column="0" HorizontalOptions="Start" />
+                <Image Grid.Row="4" Source="phone.png" Grid.Column="0" HorizontalOptions="Start" />
+                <Image Grid.Row="6" Source="mail.png" Grid.Column="0" HorizontalOptions="Start" />
+
+                <Entry  Placeholder="First name" Style="{StaticResource Key=entryStyle3}"
+                          Grid.Row="1" Grid.Column="1" Text="{Binding nContact.Name}"
+                        HeightRequest="50"/>
+
+                <Entry Placeholder="Last name" Style="{StaticResource Key=entryStyle3}"
+                          Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand"
+                       HeightRequest="50" VerticalOptions="Center"/>
+
+                <Entry  Placeholder="Company" Style="{StaticResource Key=entryStyle3}"
+                          Grid.Row="3" Grid.Column="1" 
+                        HorizontalOptions="FillAndExpand"
+                        HeightRequest="50" VerticalOptions="Center"/>
+
+                <Entry  Placeholder="Phone" Style="{StaticResource Key=entryStyle3}"
+                          Grid.Row="4" Grid.Column="1" 
+                        HorizontalOptions="FillAndExpand"
+                        HeightRequest="50" VerticalOptions="Center"/>
+
+                <Entry  Placeholder="Mobile" Style="{StaticResource Key=entryStyle3}" Text="{Binding nContact.Number}"
+                         HorizontalOptions="FillAndExpand" VerticalOptions="Center"
+                        HeightRequest="50" Grid.Column="1"
+                        Grid.Row="5" />
+
+                <Entry  Placeholder="Email" Style="{StaticResource Key=entryStyle3}"
+                          Grid.Row="6" Grid.Column="1" 
+                        HorizontalOptions="FillAndExpand"
+                        HeightRequest="50" VerticalOptions="Center"/>
+
+                <Entry  Placeholder="Home" Style="{StaticResource Key=entryStyle3}"
+                          Grid.Row="7" Grid.Column="1" 
+                         HeightRequest="50" />
+
+            <Button Text="Add" Command="{Binding AddCommand}" HeightRequest="50" Style="{StaticResource Key=buttonStyle}" Grid.Row="8" Grid.ColumnSpan="2"/>
             </Grid>
     </ContentPage.Content>
 </ContentPage>

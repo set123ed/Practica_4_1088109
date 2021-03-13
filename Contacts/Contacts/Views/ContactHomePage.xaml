@@ -10,9 +10,9 @@
     x:Class="Contacts.Views.ContactHomePage"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     ios:Page.UseSafeArea="true">
-        <ContentPage.ToolbarItems>
+        <!--<ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding NewContactCommand}"/>
-    </ContentPage.ToolbarItems>
+    </ContentPage.ToolbarItems>-->
     <Grid>
         <Grid.RowDefinitions>
                 <RowDefinition Height="70" />
@@ -29,6 +29,23 @@
             <DataTemplate>
 
                 <ViewCell>
+                    <Grid HorizontalOptions="Start" Margin="30" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{Binding Image}" Grid.RowSpan="2"/>
+
+                        <!--<Image Source="{Binding Image}"  HorizontalOptions="Start"  />-->
+                        <Label Text="{Binding Name}"  HorizontalOptions="EndAndExpand" VerticalOptions="End" Grid.Column="1" />
+                        <Label Text="{Binding Number}" HorizontalOptions="EndAndExpand" Grid.Row="1" Grid.Column="1" />
+                    </Grid>
+
                     
                     <ViewCell.ContextActions>
                         
@@ -40,19 +57,16 @@
                                       Command="{Binding Path=BindingContext.OtherCommand, Source={x:Reference contactsPage}}"
                                       CommandParameter="{Binding .}"/>
                     </ViewCell.ContextActions>
-                    <StackLayout Orientation="Vertical" Margin="30"  >
-                        <Image Source="{Binding Image}"  HorizontalOptions="Start"  />
-                        <Label Text="{Binding Name}"  HorizontalOptions="EndAndExpand" />
-                        <Label Text="{Binding Number}" HorizontalOptions="EndAndExpand" />
-                    </StackLayout>
-
+                   
                 </ViewCell>
 
             </DataTemplate>
         </ListView.ItemTemplate>
-        
     </ListView>
+         <Frame   Grid.Row="1" HorizontalOptions="End" VerticalOptions="End" 
+                   IsClippedToBounds="True" Padding="0" HeightRequest="80" WidthRequest="80"
+                   Margin="0,0,15,10" BackgroundColor="Transparent">
+                <ImageButton Source="Add" BackgroundColor="Transparent" Command="{Binding NewContactCommand}" />
+            </Frame>
         </Grid>
-          
-
 </ContentPage>

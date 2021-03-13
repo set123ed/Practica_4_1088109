@@ -23,24 +23,24 @@ namespace Contacts.ViewModel
         public ICommand OtherCommand { get; set; }
         public ICommand SelectedCommand { get; set; }
 
-        private Xamarin.Essentials.Contact _selectitem;
+        //private Xamarin.Essentials.Contact _selectitem;
 
-        public Xamarin.Essentials.Contact SelectItem
-        {
-            get
-            {
-                return _selectitem;
-            }
+        //public Xamarin.Essentials.Contact SelectItem
+        //{
+        //    get
+        //    {
+        //        return _selectitem;
+        //    }
 
-            set
-            {
-                _selectitem = value;
-                if (_selectitem != null)
-                {
-                    SelectedCommand?.Execute(_selectitem);
-                }
-            }
-        }
+        //    set
+        //    {
+        //        _selectitem = value;
+        //        if (_selectitem != null)
+        //        {
+        //            SelectedCommand?.Execute(_selectitem);
+        //        }
+        //    }
+        //}
 
         public ContactHomeViewModel()
         {

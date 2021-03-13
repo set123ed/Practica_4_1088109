@@ -10,7 +10,6 @@ namespace Contacts
         public App()
         {
             InitializeComponent();
-
             MainPage = new NavigationPage( new ContactHomePage());
         }
 
