@@ -1,5 +1,12 @@
 # Practica_4_1088109
 Rafael Melo Practica 4 Mobile Devs
+.
+.
+.
+.
+
+
+
 ![Captura de Pantalla 2021-03-12 a la(s) 11 37 21 p  m](https://user-images.githubusercontent.com/49174284/111018090-6d299080-838d-11eb-872d-b1c7b42af478.png) ![Captura de Pantalla 2021-03-12 a la(s) 11 38 10 p  m](https://user-images.githubusercontent.com/49174284/111018091-6dc22700-838d-11eb-90fe-bba0e225a8ca.png)
 
 ![Captura de Pantalla 2021-03-12 a la(s) 11 41 15 p  m](https://user-images.githubusercontent.com/49174284/111018092-6dc22700-838d-11eb-97ca-ce61014e6d69.png) ![Captura de Pantalla 2021-03-12 a la(s) 11 44 56 p  m](https://user-images.githubusercontent.com/49174284/111018093-6e5abd80-838d-11eb-86dc-6fd983b25b57.png)
