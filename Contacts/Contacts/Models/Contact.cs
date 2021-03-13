@@ -7,5 +7,6 @@ namespace Contacts.Models
     {
         public string Name { get; set; }
         public string Number { get; set; }
+        public string Image => "user.png";
     }
 }

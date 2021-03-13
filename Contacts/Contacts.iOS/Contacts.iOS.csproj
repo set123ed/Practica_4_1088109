@@ -141,5 +141,6 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\yo.jpg" />
+    <BundleResource Include="Resources\user.png" />
   </ItemGroup>
 </Project>
