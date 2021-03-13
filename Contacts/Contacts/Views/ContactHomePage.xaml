@@ -5,6 +5,7 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+    xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
     x:Name="contactsPage"
     x:Class="Contacts.Views.ContactHomePage"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
@@ -12,13 +13,23 @@
         <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding NewContactCommand}"/>
     </ContentPage.ToolbarItems>
+    <Grid>
+        <Grid.RowDefinitions>
+                <RowDefinition Height="70" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
-    <ListView ItemsSource="{Binding Contacts}" HasUnevenRows="True">
+                <StackLayout Orientation="Horizontal" Padding="0">
+                    <SearchBar Placeholder="Search contact" HorizontalOptions="Start"
+                       WidthRequest="340" />
+                            <Image Source="yo.jpg" HorizontalOptions="End"  HeightRequest="50"/>
+                </StackLayout>
+    <ListView ItemsSource="{Binding Contacts}" HasUnevenRows="True" Grid.Row="1" Margin="10,0,10,0">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <!--<TextCell Text="{Binding Name}" Detail="{Binding Number}" />-->
-                <ViewCell >
+                <ViewCell>
                     <ViewCell.ContextActions>
+                        
                         <MenuItem Text="Delete"
                                       Command="{Binding Path=BindingContext.DeleteContactCommand, Source={x:Reference contactsPage}}"
                                       CommandParameter="{Binding .}"
@@ -36,5 +47,9 @@
 
             </DataTemplate>
         </ListView.ItemTemplate>
+        
     </ListView>
+        </Grid>
+          
+
 </ContentPage>

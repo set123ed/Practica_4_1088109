@@ -17,6 +17,23 @@
                 <Setter Property="TextColor" Value="White" />
                 <Setter Property="FontAttributes" Value="Bold"/>
             </Style>
+            <Style TargetType="Entry" x:Key="entryStyle2" >
+               <Setter Property="VerticalTextAlignment" Value="Center" />
+               <Setter Property="FontSize" Value="14" />
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <!--<Setter Property="Margin" Value="20,0,20,0"/>-->
+            </Style>
+             <Style TargetType="Frame" x:Key="frameStyle" >
+                 <Setter Property="HorizontalOptions" Value="Center"/>
+               
+            </Style>
+         
+
+
+
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>
